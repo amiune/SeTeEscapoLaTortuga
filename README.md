@@ -1,3 +1,5 @@
+# A spanish translation of ColabTurtle from Tolga Atam: https://github.com/tolgaatam/ColabTurtle
+
 Turtle for Google Colab notebooks
 ===================
 
