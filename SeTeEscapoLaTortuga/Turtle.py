@@ -105,6 +105,7 @@ def initializeTurtle(initial_speed=DEFAULT_SPEED, initial_window_size=DEFAULT_WI
 
     drawing_window = display(HTML(_generateSvgDrawing()), display_id=True)
 
+despertar_tortuga = initializeTurtle # Spanish translation
 
 # helper function for generating svg string of the turtle
 def _generateTurtleSvgDrawing():
@@ -174,6 +175,7 @@ def forward(units):
     _moveToNewPosition(ending_point)
 
 fd = forward # alias
+adelante = forward # Spanish translation
 
 # makes the turtle move backward by 'units' units
 def backward(units):
@@ -183,6 +185,7 @@ def backward(units):
 
 bk = backward # alias
 back = backward # alias
+atras = backward # Spanish translation
 
 
 # makes the turtle move right by 'degrees' degrees (NOT radians)
@@ -196,6 +199,7 @@ def right(degrees):
     _updateDrawing()
 
 rt = right # alias
+derecha = right # Spanish translation
 
 # makes the turtle face a given direction
 def face(degrees):
@@ -209,6 +213,7 @@ def face(degrees):
 
 setheading = face # alias
 seth = face # alias
+direccion = face # Spanish translation
 
 # makes the turtle move right by 'degrees' degrees (NOT radians, this library does not support radians right now)
 def left(degrees):
@@ -217,6 +222,7 @@ def left(degrees):
     right(-1 * degrees)
 
 lt = left
+izquierda = left # Spanish translation
 
 # raises the pen such that following turtle moves will not cause any drawings
 def penup():
@@ -228,6 +234,7 @@ def penup():
 
 pu = penup # alias
 up = penup # alias
+no_dibujar = penup # Spanish translation
 
 # lowers the pen such that following turtle moves will now cause drawings
 def pendown():
@@ -239,9 +246,12 @@ def pendown():
 
 pd = pendown # alias
 down = pendown # alias
+dibujar = pendown # Spanish translation
 
 def isdown():
     return is_pen_down
+
+esta_dibujando = isdown # Spanish translation
 
 # update the speed of the moves, [1,13]
 # if argument is omitted, it returns the speed.
@@ -257,6 +267,7 @@ def speed(speed = None):
     # TODO: decide if we should put the timout after changing the speed
     # _updateDrawing()
 
+velocidad = speed # Spanish translation
 
 # move the turtle to a designated 'x' x-coordinate, y-coordinate stays the same
 def setx(x):
@@ -266,6 +277,7 @@ def setx(x):
         raise ValueError('new x position must be non-negative.')
     _moveToNewPosition((x, turtle_pos[1]))
 
+mover_a_x = setx # Spanish translation
 
 # move the turtle to a designated 'y' y-coordinate, x-coordinate stays the same
 def sety(y):
@@ -275,12 +287,15 @@ def sety(y):
         raise ValueError('new y position must be non-negative.')
     _moveToNewPosition((turtle_pos[0], y))
 
+mover_a_y = sety # Spanish translation
 
 def home():
     global turtle_degree
 
     turtle_degree = DEFAULT_TURTLE_DEGREE
     _moveToNewPosition( (window_size[0] // 2, window_size[1] // 2) ) # this will handle updating the drawing.
+
+ir_a_casa = home # Spanish translation
 
 # retrieve the turtle's currrent 'x' x-coordinate
 def getx():
@@ -299,12 +314,14 @@ def position():
     return turtle_pos
 
 pos = position # alias
+posicion = position # Spanish translation
 
 # retrieve the turtle's current angle
 def getheading():
     return turtle_degree
 
 heading = getheading # alias
+obtener_direccion = getheading # Spanish translation
 
 # move the turtle to a designated 'x'-'y' coordinate
 def goto(x, y=None):
@@ -327,6 +344,7 @@ def goto(x, y=None):
 
 setpos = goto # alias
 setposition = goto # alias
+ir_a_xy = goto # Spanish translation
 
 # switch turtle visibility to ON
 def showturtle():
@@ -336,6 +354,7 @@ def showturtle():
     _updateDrawing()
 
 st = showturtle # alias
+mostrar_tortuga = showturtle # Spanish translation
 
 # switch turtle visibility to OFF
 def hideturtle():
@@ -345,9 +364,12 @@ def hideturtle():
     _updateDrawing()
 
 ht = hideturtle # alias
+ocultar_tortuga = hideturtle # Spanish translation
 
 def isvisible():
     return is_turtle_visible
+
+es_visible = isvisible
 
 def _validateColorString(color):
     if color in VALID_COLORS_SET: # 140 predefined html color names
@@ -395,6 +417,8 @@ def bgcolor(color = None, c2 = None, c3 = None):
     background_color = _processColor(color)
     _updateDrawing()
 
+color_de_fondo = bgcolor # Spanish translation
+
 
 # change the color of the pen
 # if no params, return the current pen color
@@ -431,6 +455,7 @@ def width(width = None):
         # _updateDrawing()
 
 pensize = width
+ancho_linea = width # Spanish translation
 
 # calculate the distance between the turtle and a given point
 def distance(x, y=None):
@@ -455,12 +480,16 @@ def distance(x, y=None):
 
     return round(math.sqrt( (turtle_pos[0] - x) ** 2 + (turtle_pos[1] - y) ** 2 ), 4)
 
+distancia = distance # Spanish translation
+
 # clear any text or drawing on the screen
 def clear():
     global svg_lines_string
 
     svg_lines_string = ""
     _updateDrawing()
+
+borrar_todo = clear # Spanish translation
 
 def write(obj, **kwargs):
     global svg_lines_string
@@ -503,6 +532,8 @@ def write(obj, **kwargs):
     
     _updateDrawing()
 
+escribir = write # Spanish translation
+
 def shape(shape=None):
     global turtle_shape
     if shape is None:
@@ -513,10 +544,14 @@ def shape(shape=None):
     turtle_shape = shape
     _updateDrawing()
 
+forma_de_la_tortuga = shape # Spanish translation
+
 # return turtle window width
 def window_width():
     return window_size[0]
+ancho_de_la_ventana = window_width # Spanish translation
 
 # return turtle window height
 def window_height():
     return window_size[1]
+alto_de_la_ventana = window_height # Spanish translation

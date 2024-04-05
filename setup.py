@@ -1,12 +1,12 @@
 from distutils.core import setup
 
 setup(
-    name='ColabTurtle',
-    version='2.1.0',
-    packages=['ColabTurtle'],
-    url='https://github.com/tolgaatam/ColabTurtle',
+    name='SeTeEscapoLaTortuga',
+    version='0.1',
+    packages=['SeTeEscapoLaTortuga'],
+    url='https://github.com/amiune/SeTeEscapoLaTortuga',
     license='MIT',
-    author='Tolga Atam',
-    author_email='atam@sabanciuniv.edu',
-    description='An HTML based Turtle implementation, in order to work in Google Colab'
+    author='Hernan Amiune',
+    author_email='amiune@gmail.com',
+    description='A spanish translation of ColabTurtle from Tolga Atam: https://github.com/tolgaatam/ColabTurtle'
 )
